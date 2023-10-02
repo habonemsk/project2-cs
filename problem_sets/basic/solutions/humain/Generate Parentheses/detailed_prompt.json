@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "Generate Parentheses",
+    "model_identifier": "humain",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def generateParenthesis(n: int) -> List[str]:\n    def generate(p, left, right, parens=[]):\n        if right >= left >= 0:\n            if not right: parens += p,\n            generate(p + '(', left - 1, right)\n            generate(p + ')', left, right - 1)\n        return parens\n    return generate('', n, n)\n",
+    "feedback": null
+}

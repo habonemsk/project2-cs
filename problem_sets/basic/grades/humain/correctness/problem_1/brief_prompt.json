@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "problem_1",
+    "prompt_identifier": "brief_prompt",
+    "model_identifier": "humain",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: a = 1, b = 3\nExpected Output: 3 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpnxpcv5mv.json'\", 'parameters': [1, 3], 'function_code': 'def add(a: int, b: int) -> int\\n return a+b\\n'}",
+        "Test failed: Input: a = -1, b = 4\nExpected Output: 1 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmp82jv5zyw.json'\", 'parameters': [-1, 4], 'function_code': 'def add(a: int, b: int) -> int\\n return a+b\\n'}"
+    ]
+}

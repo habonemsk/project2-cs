@@ -1,0 +1,102 @@
+{
+    "identifier": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.",
+    "function_prototype": {
+        "function_name": "generateParenthesis",
+        "parameters": [
+            {
+                "name": "n",
+                "type": "int"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "List[str]"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "n": 3
+            },
+            "expected_output": [
+                "((()))",
+                "(()())",
+                "(())()",
+                "()(())",
+                "()()()"
+            ]
+        },
+        {
+            "input": {
+                "n": 1
+            },
+            "expected_output": [
+                "()"
+            ]
+        }
+    ],
+    "tags": [
+        "String",
+        "Recursion",
+        "Medium"
+    ],
+    "prompts": [
+        {
+            "prompt_id": "brief_prompt",
+            "prompt": "Implement the generateParenthesis function to generate all combinations of well-formed parentheses for given n pairs.",
+            "genericize": false,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "n": 2
+                    },
+                    "expected_output": [
+                        "(())",
+                        "()()"
+                    ]
+                },
+                {
+                    "input": {
+                        "n": 1
+                    },
+                    "expected_output": [
+                        "()"
+                    ]
+                }
+            ]
+        },
+        {
+            "prompt_id": "detailed_prompt",
+            "prompt": "Write a function named 'generateParenthesis' that takes an integer n representing n pairs of parentheses and returns a list of strings representing all combinations of well-formed parentheses.",
+            "genericize": true,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "n": 2
+                    },
+                    "expected_output": [
+                        "(())",
+                        "()()"
+                    ]
+                },
+                {
+                    "input": {
+                        "n": 3
+                    },
+                    "expected_output": [
+                        "((()))",
+                        "(()())",
+                        "(())()",
+                        "()(())",
+                        "()()()"
+                    ]
+                }
+            ]
+        }
+    ],
+    "title": "Generate Parentheses",
+    "function_signature": "def generateParenthesis(n: int) -> List[str]:",
+    "example": "Input: n = 3\nOutput: [\"((()))\",\"(()())\",\"(())()\",\"()(())\",\"()()()\"]"
+}

@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "Count and Say",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "humain",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: n = 1\nExpected Output: 1 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpcnzrrf9d.json'\", 'parameters': [1], 'function_code': 'def count_and_say(n: int) -> str:\\n    if n == 1:\\n        return \"1\"\\n    prev_term = count_and_say(n - 1)\\n    result = []\\n    i = 0\\n    while i < len(prev_term):\\n        count = 1\\n        while i + 1 < len(prev_term) and prev_term[i] == prev_term[i + 1]:\\n            i += 1\\n            count += 1\\n        result.append(str(count) + prev_term[i])\\n        i += 1\\n    return \"\".join(result)\\n'}",
+        "Test failed: Input: n = 4\nExpected Output: 1211 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpd81piolm.json'\", 'parameters': [4], 'function_code': 'def count_and_say(n: int) -> str:\\n    if n == 1:\\n        return \"1\"\\n    prev_term = count_and_say(n - 1)\\n    result = []\\n    i = 0\\n    while i < len(prev_term):\\n        count = 1\\n        while i + 1 < len(prev_term) and prev_term[i] == prev_term[i + 1]:\\n            i += 1\\n            count += 1\\n        result.append(str(count) + prev_term[i])\\n        i += 1\\n    return \"\".join(result)\\n'}"
+    ]
+}

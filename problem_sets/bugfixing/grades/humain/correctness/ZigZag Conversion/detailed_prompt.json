@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "ZigZag Conversion",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "humain",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: s = PAYPALISHIRING, numRows = 3\nExpected Output: PAHNAPLSIIGYIR Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpzuj_y33d.json'\", 'parameters': ['PAYPALISHIRING', 3], 'function_code': 'def convert(s: str, numRows: int) -> str:\\n    if numRows == 1 or numRows >= len(s):\\n        return s\\n    res = [\\'\\'] * numRows\\n    index, step = 0, 1\\n    for char in s:\\n        res[index] += char\\n        if index == 0:\\n            step = 1\\n        elif index == numRows - 1:\\n            step = -1\\n        index += step\\n    return \"\".join(res)\\n'}",
+        "Test failed: Input: s = PAYPALISHIRING, numRows = 4\nExpected Output: PINALSIGYAHRPI Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmphj0unh0f.json'\", 'parameters': ['PAYPALISHIRING', 4], 'function_code': 'def convert(s: str, numRows: int) -> str:\\n    if numRows == 1 or numRows >= len(s):\\n        return s\\n    res = [\\'\\'] * numRows\\n    index, step = 0, 1\\n    for char in s:\\n        res[index] += char\\n        if index == 0:\\n            step = 1\\n        elif index == numRows - 1:\\n            step = -1\\n        index += step\\n    return \"\".join(res)\\n'}"
+    ]
+}

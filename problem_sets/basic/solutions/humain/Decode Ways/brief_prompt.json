@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "Decode Ways",
+    "model_identifier": "humain",
+    "prompt_identifier": "brief_prompt",
+    "solution_code": "def num_decodings(s: str) -> int:\n    def recursive_with_memo(index: int, memo: dict) -> int:\n        if index == len(s): return 1\n        if s[index] == '0': return 0\n        if index == len(s) - 1: return 1\n        if index in memo: return memo[index]\n        \n        ans = recursive_with_memo(index + 1, memo)\n        if int(s[index: index + 2]) <= 26:\n            ans += recursive_with_memo(index + 2, memo)\n        \n        memo[index] = ans\n        return ans\n    return recursive_with_memo(0, {})\n",
+    "feedback": null
+}

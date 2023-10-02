@@ -1,0 +1,81 @@
+{
+    "identifier": "Add Binary",
+    "description": "Given two binary strings 'a' and 'b', return their sum as a binary string.\n\nExample:\nInput: a = '1010', b = '1011'\nOutput: '10101'",
+    "prompts": [
+        {
+            "prompt_id": "brief_prompt",
+            "prompt": "Implement a function 'add_binary' that takes two binary strings 'a' and 'b' and returns their sum as a binary string.",
+            "genericize": false,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "a": "1010",
+                        "b": "1011"
+                    },
+                    "expected_output": [
+                        "10101"
+                    ]
+                }
+            ]
+        },
+        {
+            "prompt_id": "detailed_prompt",
+            "prompt": "Develop the 'add_binary' function that takes two binary strings 'a' and 'b', and calculates their sum, returning it as a binary string.",
+            "genericize": true,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "a": "1010",
+                        "b": "1011"
+                    },
+                    "expected_output": [
+                        "10101"
+                    ]
+                }
+            ]
+        }
+    ],
+    "function_prototype": {
+        "function_name": "add_binary",
+        "parameters": [
+            {
+                "name": "a",
+                "type": "str"
+            },
+            {
+                "name": "b",
+                "type": "str"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "str"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "a": "1010",
+                "b": "1011"
+            },
+            "expected_output": [
+                "10101"
+            ]
+        },
+        {
+            "input": {
+                "a": "11",
+                "b": "1"
+            },
+            "expected_output": [
+                "100"
+            ]
+        }
+    ],
+    "optimal_solution": "def add_binary(a: str, b: str) -> str:\n    return bin(int(a, 2) + int(b, 2))[2:]",
+    "tags": [
+        "String",
+        "Easy"
+    ]
+}

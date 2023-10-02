@@ -1,0 +1,81 @@
+{
+    "identifier": "ZigZag Conversion",
+    "description": "The string 'PAYPALISHIRING' is written in a zigzag pattern on three lines like this:\nP   A   H   N\nA P L S I I G\nY   I   R\nAnd then read line by line: 'PAHNAPLSIIGYIR'. Write the code that will take a string and make this conversion given a number of rows.",
+    "prompts": [
+        {
+            "prompt_id": "brief_prompt",
+            "prompt": "Write a function 'convert' to perform ZigZag Conversion on a given string 's' and a given number of rows 'numRows'.",
+            "genericize": false,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "PAYPALISHIRING",
+                        "numRows": 3
+                    },
+                    "expected_output": [
+                        "PAHNAPLSIIGYIR"
+                    ]
+                }
+            ]
+        },
+        {
+            "prompt_id": "detailed_prompt",
+            "prompt": "Implement the 'convert' function that takes a string 's' and an integer 'numRows', performs ZigZag Conversion, and returns the converted string.",
+            "genericize": true,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "PAYPALISHIRING",
+                        "numRows": 3
+                    },
+                    "expected_output": [
+                        "PAHNAPLSIIGYIR"
+                    ]
+                }
+            ]
+        }
+    ],
+    "function_prototype": {
+        "function_name": "convert",
+        "parameters": [
+            {
+                "name": "s",
+                "type": "str"
+            },
+            {
+                "name": "numRows",
+                "type": "int"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "str"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "s": "PAYPALISHIRING",
+                "numRows": 3
+            },
+            "expected_output": [
+                "PAHNAPLSIIGYIR"
+            ]
+        },
+        {
+            "input": {
+                "s": "PAYPALISHIRING",
+                "numRows": 4
+            },
+            "expected_output": [
+                "PINALSIGYAHRPI"
+            ]
+        }
+    ],
+    "optimal_solution": "def convert(s: str, numRows: int) -> str:\n    if numRows == 1 or numRows >= len(s):\n        return s\n    res = [''] * numRows\n    index, step = 0, 1\n    for char in s:\n        res[index] += char\n        if index == 0:\n            step = 1\n        elif index == numRows - 1:\n            step = -1\n        index += step\n    return ''.join(res)",
+    "tags": [
+        "String",
+        "Medium"
+    ]
+}

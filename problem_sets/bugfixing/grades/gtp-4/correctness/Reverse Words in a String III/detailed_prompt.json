@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "Reverse Words in a String III",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gtp-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: s = Let's take LeetCode contest\nExpected Output: s'teL ekat edoCteeL tsetnoc Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmp_69rfri8.json'\", 'parameters': [\"Let's take LeetCode contest\"], 'function_code': ''}"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "Valid Parentheses",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gtp-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: s = ()[]\nExpected Output: True Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmp1owfg91v.json'\", 'parameters': ['()[]'], 'function_code': ''}",
+        "Test failed: Input: s = ([)]\nExpected Output: False Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpv997uxp7.json'\", 'parameters': ['([)]'], 'function_code': ''}"
+    ]
+}

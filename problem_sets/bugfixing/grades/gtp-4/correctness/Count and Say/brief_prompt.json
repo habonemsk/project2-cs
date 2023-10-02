@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "Count and Say",
+    "prompt_identifier": "brief_prompt",
+    "model_identifier": "gtp-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: n = 1\nExpected Output: 1 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmp4t28ux8u.json'\", 'parameters': [1], 'function_code': ''}",
+        "Test failed: Input: n = 4\nExpected Output: 1211 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmppdpu5e_4.json'\", 'parameters': [4], 'function_code': ''}"
+    ]
+}

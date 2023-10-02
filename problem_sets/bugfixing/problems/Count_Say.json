@@ -1,0 +1,89 @@
+{
+    "identifier": "Count and Say",
+    "description": "The count-and-say sequence is a sequence of digit strings defined by the recursive formula:\ncountAndSay(1) = '1'\ncountAndSay(n) is the way you would 'say' the digit string from countAndSay(n - 1), which is then converted to a different digit string.",
+    "prompts": [
+        {
+            "prompt_id": "brief_prompt",
+            "prompt": "Implement a function 'count_and_say' that generates the nth term of the count-and-say sequence.",
+            "genericize": false,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "n": 1
+                    },
+                    "expected_output": [
+                        "1"
+                    ]
+                },
+                {
+                    "input": {
+                        "n": 4
+                    },
+                    "expected_output": [
+                        "1211"
+                    ]
+                }
+            ]
+        },
+        {
+            "prompt_id": "detailed_prompt",
+            "prompt": "Develop the 'count_and_say' function to generate the nth term of the count-and-say sequence according to the recursive formula provided in the description.",
+            "genericize": true,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "n": 1
+                    },
+                    "expected_output": [
+                        "1"
+                    ]
+                },
+                {
+                    "input": {
+                        "n": 4
+                    },
+                    "expected_output": [
+                        "1211"
+                    ]
+                }
+            ]
+        }
+    ],
+    "function_prototype": {
+        "function_name": "count_and_say",
+        "parameters": [
+            {
+                "name": "n",
+                "type": "int"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "str"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "n": 1
+            },
+            "expected_output": [
+                "1"
+            ]
+        },
+        {
+            "input": {
+                "n": 4
+            },
+            "expected_output": [
+                "1211"
+            ]
+        }
+    ],
+    "optimal_solution": "def count_and_say(n: int) -> str:\n    if n == 1:\n        return '1'\n    previous = '1'\n    for _ in range(2, n + 1):\n        next_s, count, say = '', 1, previous[0]\n        for c in previous[1:]:\n            if c == say:\n                count += 1\n            else:\n                next_s += str(count) + say\n                count, say = 1, c\n        previous = next_s + str(count) + say\n    return previous",
+    "tags": [
+        "String",
+        "Medium"
+    ]
+}

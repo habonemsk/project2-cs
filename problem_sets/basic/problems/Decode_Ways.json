@@ -1,0 +1,92 @@
+{
+    "identifier": "Decode Ways",
+    "description": "A message containing letters from A-Z can be encoded into numbers using the following mapping: 'A' -> '1', 'B' -> '2', ... 'Z' -> '26'. Given a non-empty string containing only digits, determine the total number of ways to decode it.",
+    "function_prototype": {
+        "function_name": "numDecodings",
+        "parameters": [
+            {
+                "name": "s",
+                "type": "str"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "int"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "s": "12"
+            },
+            "expected_output": [
+                2
+            ]
+        },
+        {
+            "input": {
+                "s": "226"
+            },
+            "expected_output": [
+                3
+            ]
+        }
+    ],
+    "tags": [
+        "String",
+        "Dynamic Programming",
+        "Medium"
+    ],
+    "prompts": [
+        {
+            "prompt_id": "brief_prompt",
+            "prompt": "Implement the numDecodings function to return the total number of ways to decode the string s containing digits only.",
+            "genericize": false,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "0"
+                    },
+                    "expected_output": [
+                        0
+                    ]
+                },
+                {
+                    "input": {
+                        "s": "10"
+                    },
+                    "expected_output": [
+                        1
+                    ]
+                }
+            ]
+        },
+        {
+            "prompt_id": "detailed_prompt",
+            "prompt": "Write a function named 'numDecodings' that takes a string s representing the encoded message containing digits only and returns the total number of ways to decode it following the given mapping.",
+            "genericize": true,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "01"
+                    },
+                    "expected_output": [
+                        0
+                    ]
+                },
+                {
+                    "input": {
+                        "s": "110"
+                    },
+                    "expected_output": [
+                        1
+                    ]
+                }
+            ]
+        }
+    ],
+    "title": "Decode Ways",
+    "function_signature": "def numDecodings(s: str) -> int:",
+    "example": "Input: s = \"226\"\nOutput: 3"
+}

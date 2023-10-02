@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "Generate Parentheses",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gtp-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: n = 3\nExpected Output: ((())), (()()), (())(), ()(()), ()()() Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmp9r9speek.json'\", 'parameters': [3], 'function_code': ''}",
+        "Test failed: Input: n = 1\nExpected Output: () Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpf_my_vrk.json'\", 'parameters': [1], 'function_code': ''}"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "ZigZag Conversion",
+    "model_identifier": "humain",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def convert(s: str, numRows: int) -> str:\n    if numRows == 1 or numRows >= len(s):\n        return s\n    res = [''] * numRows\n    index, step = 0, 1\n    for char in s:\n        res[index] += char\n        if index == 0:\n            step = 1\n        elif index == numRows - 1:\n            step = -1\n        index += step\n    return \"\".join(res)\n",
+    "feedback": null
+}

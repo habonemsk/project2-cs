@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "Decode String",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gtp-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: s = 3[a]2[bc]\nExpected Output: aaabcbc Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpcseia916.json'\", 'parameters': ['3[a]2[bc]'], 'function_code': ''}",
+        "Test failed: Input: s = 3[a2[c]]\nExpected Output: accaccacc Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpkg4zrhnf.json'\", 'parameters': ['3[a2[c]]'], 'function_code': ''}"
+    ]
+}

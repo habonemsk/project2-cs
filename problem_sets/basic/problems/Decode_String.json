@@ -1,0 +1,92 @@
+{
+    "identifier": "Decode String",
+    "description": "Given an encoded string, return its decoded string. The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. Note that k is guaranteed to be a positive integer.",
+    "function_prototype": {
+        "function_name": "decodeString",
+        "parameters": [
+            {
+                "name": "s",
+                "type": "str"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "str"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "s": "3[a]2[bc]"
+            },
+            "expected_output": [
+                "aaabcbc"
+            ]
+        },
+        {
+            "input": {
+                "s": "3[a2[c]]"
+            },
+            "expected_output": [
+                "accaccacc"
+            ]
+        }
+    ],
+    "tags": [
+        "String",
+        "Stack",
+        "Medium"
+    ],
+    "prompts": [
+        {
+            "prompt_id": "brief_prompt",
+            "prompt": "Implement the decodeString function to decode the given encoded string s following the encoding rule: k[encoded_string].",
+            "genericize": false,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "2[abc]3[cd]ef"
+                    },
+                    "expected_output": [
+                        "abcabccdcdcdef"
+                    ]
+                },
+                {
+                    "input": {
+                        "s": "100[leetcode]"
+                    },
+                    "expected_output": [
+                        "leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode"
+                    ]
+                }
+            ]
+        },
+        {
+            "prompt_id": "detailed_prompt",
+            "prompt": "Write a function named 'decodeString' that takes a string s as a parameter and returns its decoded string. The string s is encoded according to the following rule: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times.",
+            "genericize": true,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "3[a]2[bc]"
+                    },
+                    "expected_output": [
+                        "aaabcbc"
+                    ]
+                },
+                {
+                    "input": {
+                        "s": "3[a2[c]]"
+                    },
+                    "expected_output": [
+                        "accaccacc"
+                    ]
+                }
+            ]
+        }
+    ],
+    "title": "Decode String",
+    "function_signature": "def decodeString(s: str) -> str:",
+    "example": "Input: s = \"3[a]2[bc]\"\nOutput: \"aaabcbc\""
+}

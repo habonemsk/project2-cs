@@ -1,0 +1,28 @@
+This I modifie from the code to excecute my benchmarking
+1. base_types.py
+    def get_python_type(self, param_type: str, input: str) -> Any:
+        try:
+            # Handle string type
+            if param_type == "str":
+                return input  # Return the string as is
+            # Handle integer type
+            elif param_type == "int":
+                return int(input)
+            # Handle boolean type
+            elif param_type == "bool":
+                return input.lower() == "true"
+            # Handle JSON strings representing lists or dictionaries
+            elif '[' in param_type or '{' in param_type:
+                try:
+                    return json.loads(input)  # Try to parse as JSON
+                except json.JSONDecodeError:
+                    try:
+                        return ast.literal_eval(input)  # Safely evaluate string representation
+                    except (SyntaxError, ValueError):
+                        return input  # Return the string as is if it's not valid JSON or safely evaluatable string
+            # Handle unknown types
+            else:
+                return input  # Return the string as is for unknown types
+        except Exception as e:
+            return str(e)  # Return the error message as a string
+

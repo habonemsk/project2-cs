@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "Reverse String II",
+    "model_identifier": "humain",
+    "prompt_identifier": "brief_prompt",
+    "solution_code": "def reverseStr(s: str, k: int) -> str:\n    if not s: return s\n    if len(s) < k: return s[::-1]\n    if len(s) < 2*k: return s[:k][::-1] + s[k:]\n    return s[:k][::-1] + s[k:2*k] + reverseStr(s[2*k:], k)\n",
+    "feedback": null
+}

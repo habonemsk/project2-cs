@@ -1,0 +1,65 @@
+{
+    "identifier": "Reverse Words in a String III",
+    "description": "Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.\n\nExample:\nInput: 'Let's take LeetCode contest'\nOutput: 's'teL ekat edoCteeL tsetnoc'",
+    "prompts": [
+        {
+            "prompt_id": "brief_prompt",
+            "prompt": "Write a function 'reverse_words' that takes a string 's' and returns a new string with the order of characters in each word reversed.",
+            "genericize": false,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "Let's take LeetCode contest"
+                    },
+                    "expected_output": [
+                        "s'teL ekat edoCteeL tsetnoc"
+                    ]
+                }
+            ]
+        },
+        {
+            "prompt_id": "detailed_prompt",
+            "prompt": "Develop the 'reverse_words' function that takes a string 's' and reverses the order of characters in each word within the sentence while preserving whitespace and initial word order.",
+            "genericize": true,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "Let's take LeetCode contest"
+                    },
+                    "expected_output": [
+                        "s'teL ekat edoCteeL tsetnoc"
+                    ]
+                }
+            ]
+        }
+    ],
+    "function_prototype": {
+        "function_name": "reverse_words",
+        "parameters": [
+            {
+                "name": "s",
+                "type": "str"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "str"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "s": "Let's take LeetCode contest"
+            },
+            "expected_output": [
+                "s'teL ekat edoCteeL tsetnoc"
+            ]
+        }
+    ],
+    "optimal_solution": "def reverse_words(s: str) -> str:\n    return ' '.join(word[::-1] for word in s.split(' '))",
+    "tags": [
+        "String",
+        "Easy"
+    ]
+}

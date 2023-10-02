@@ -1,0 +1,101 @@
+{
+    "identifier": "Reverse String II",
+    "description": "Given a string and an integer k, you need to reverse the first k characters for every 2k characters counting from the start of the string. If there are fewer than k characters left, reverse all of them. If there are fewer than 2k but greater than or equal to k characters, then reverse the first k characters and leave the others as original.",
+    "function_prototype": {
+        "function_name": "reverseStr",
+        "parameters": [
+            {
+                "name": "s",
+                "type": "str"
+            },
+            {
+                "name": "k",
+                "type": "int"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "str"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "s": "abcdefg",
+                "k": 2
+            },
+            "expected_output": [
+                "bacdfeg"
+            ]
+        },
+        {
+            "input": {
+                "s": "abcdefgh",
+                "k": 3
+            },
+            "expected_output": [
+                "cbadefhg"
+            ]
+        }
+    ],
+    "tags": [
+        "String",
+        "Easy"
+    ],
+    "prompts": [
+        {
+            "prompt_id": "brief_prompt",
+            "prompt": "Implement the reverseStr function to reverse the first k characters for every 2k characters in the given string s.",
+            "genericize": false,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "abcdefg",
+                        "k": 2
+                    },
+                    "expected_output": [
+                        "bacdfeg"
+                    ]
+                },
+                {
+                    "input": {
+                        "s": "a",
+                        "k": 1
+                    },
+                    "expected_output": [
+                        "a"
+                    ]
+                }
+            ]
+        },
+        {
+            "prompt_id": "detailed_prompt",
+            "prompt": "Write a function named 'reverseStr' that takes a string s and an integer k, and returns a string where the first k characters for every 2k characters are reversed.",
+            "genericize": true,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "abcdef",
+                        "k": 3
+                    },
+                    "expected_output": [
+                        "cbadef"
+                    ]
+                },
+                {
+                    "input": {
+                        "s": "abcdefgh",
+                        "k": 2
+                    },
+                    "expected_output": [
+                        "bacdfegh"
+                    ]
+                }
+            ]
+        }
+    ],
+    "title": "Reverse String II",
+    "function_signature": "def reverseStr(s: str, k: int) -> str:",
+    "example": "Input: s = \"abcdefg\", k = 2\nOutput: \"bacdfeg\""
+}

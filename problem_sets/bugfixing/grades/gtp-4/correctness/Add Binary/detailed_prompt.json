@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "Add Binary",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gtp-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: a = 1010, b = 1011\nExpected Output: 10101 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpf53qmkxa.json'\", 'parameters': ['1010', '1011'], 'function_code': ''}",
+        "Test failed: Input: a = 11, b = 1\nExpected Output: 100 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmp2vneaq_r.json'\", 'parameters': ['11', '1'], 'function_code': ''}"
+    ]
+}

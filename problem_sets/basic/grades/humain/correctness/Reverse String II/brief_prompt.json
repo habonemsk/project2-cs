@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "Reverse String II",
+    "prompt_identifier": "brief_prompt",
+    "model_identifier": "humain",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: s = abcdefg, k = 2\nExpected Output: bacdfeg Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmplng12zkd.json'\", 'parameters': ['abcdefg', 2], 'function_code': 'def reverseStr(s: str, k: int) -> str:\\n    if not s: return s\\n    if len(s) < k: return s[::-1]\\n    if len(s) < 2*k: return s[:k][::-1] + s[k:]\\n    return s[:k][::-1] + s[k:2*k] + reverseStr(s[2*k:], k)\\n'}",
+        "Test failed: Input: s = abcdefgh, k = 3\nExpected Output: cbadefhg Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpdvlrbhis.json'\", 'parameters': ['abcdefgh', 3], 'function_code': 'def reverseStr(s: str, k: int) -> str:\\n    if not s: return s\\n    if len(s) < k: return s[::-1]\\n    if len(s) < 2*k: return s[:k][::-1] + s[k:]\\n    return s[:k][::-1] + s[k:2*k] + reverseStr(s[2*k:], k)\\n'}"
+    ]
+}

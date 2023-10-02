@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "Unique Email Addresses",
+    "prompt_identifier": "brief_prompt",
+    "model_identifier": "gtp-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: emails = ['test.email+alex@leetcode.com', 'test.e.mail+bob.lee@leetcode.com']\nExpected Output: 1 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpc2t0z8_m.json'\", 'parameters': ['the JSON object must be str, bytes or bytearray, not list'], 'function_code': ''}",
+        "Test failed: Input: emails = ['test.email+alex@leetcode.com', 'test.e.mail.leet+alex@leetcode.com']\nExpected Output: 1 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmp9xgjb3ny.json'\", 'parameters': ['the JSON object must be str, bytes or bytearray, not list'], 'function_code': ''}"
+    ]
+}

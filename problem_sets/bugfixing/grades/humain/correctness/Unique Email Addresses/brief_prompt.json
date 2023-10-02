@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "Unique Email Addresses",
+    "prompt_identifier": "brief_prompt",
+    "model_identifier": "humain",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: emails = ['test.email+alex@leetcode.com', 'test.e.mail+bob.lee@leetcode.com']\nExpected Output: 1 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpipz4wtxv.json'\", 'parameters': ['the JSON object must be str, bytes or bytearray, not list'], 'function_code': \"def num_unique_emails(emails: List[str]) -> int:\\n    def process_email(email: str) -> str:\\n        local, domain = email.split('@')\\n        local = local.split('+')[0].replace('.', '')\\n        return local + '@' + domain\\n    return len(set(map(process_email, emails)))\\n\"}",
+        "Test failed: Input: emails = ['test.email+alex@leetcode.com', 'test.e.mail.leet+alex@leetcode.com']\nExpected Output: 1 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmppb68f5d1.json'\", 'parameters': ['the JSON object must be str, bytes or bytearray, not list'], 'function_code': \"def num_unique_emails(emails: List[str]) -> int:\\n    def process_email(email: str) -> str:\\n        local, domain = email.split('@')\\n        local = local.split('+')[0].replace('.', '')\\n        return local + '@' + domain\\n    return len(set(map(process_email, emails)))\\n\"}"
+    ]
+}

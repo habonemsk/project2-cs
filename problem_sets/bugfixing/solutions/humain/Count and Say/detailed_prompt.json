@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "Count and Say",
+    "model_identifier": "humain",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def count_and_say(n: int) -> str:\n    if n == 1:\n        return \"1\"\n    prev_term = count_and_say(n - 1)\n    result = []\n    i = 0\n    while i < len(prev_term):\n        count = 1\n        while i + 1 < len(prev_term) and prev_term[i] == prev_term[i + 1]:\n            i += 1\n            count += 1\n        result.append(str(count) + prev_term[i])\n        i += 1\n    return \"\".join(result)\n",
+    "feedback": null
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "problem_1",
+    "model_identifier": "humain",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "Write a function named 'add' that takes two integer arguments, 'a' and 'b', and returns their sum as an integer.\n\nFunction Signature:\nadd(a: int, b: int) -> int\n\nSample Inputs and Outputs:\n\nTest Case 1:\nInput: a = 3, b = 4\nExpected Output: 7\nTest Case 2:\nInput: a = 5, b = 6\nExpected Output: 11\ndef add(a: int, b: int) -> int\n retrun a+b\n",
+    "feedback": null
+}

@@ -1,0 +1,92 @@
+{
+    "identifier": "Valid Parentheses",
+    "description": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if: Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order.",
+    "function_prototype": {
+        "function_name": "isValid",
+        "parameters": [
+            {
+                "name": "s",
+                "type": "str"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "bool"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "s": "()[]"
+            },
+            "expected_output": [
+                true
+            ]
+        },
+        {
+            "input": {
+                "s": "([)]"
+            },
+            "expected_output": [
+                false
+            ]
+        }
+    ],
+    "tags": [
+        "String",
+        "Stack",
+        "Easy"
+    ],
+    "prompts": [
+        {
+            "prompt_id": "brief_prompt",
+            "prompt": "Implement the isValid function to determine if the input string s has valid parentheses.",
+            "genericize": false,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "()[]"
+                    },
+                    "expected_output": [
+                        true
+                    ]
+                },
+                {
+                    "input": {
+                        "s": "(]"
+                    },
+                    "expected_output": [
+                        false
+                    ]
+                }
+            ]
+        },
+        {
+            "prompt_id": "detailed_prompt",
+            "prompt": "Write a function named 'isValid' that takes a string s containing just the characters '(', ')', '{', '}', '[' and ']', and returns a boolean representing whether the input string has valid parentheses.",
+            "genericize": true,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "()"
+                    },
+                    "expected_output": [
+                        true
+                    ]
+                },
+                {
+                    "input": {
+                        "s": "([)]"
+                    },
+                    "expected_output": [
+                        false
+                    ]
+                }
+            ]
+        }
+    ],
+    "title": "Valid Parentheses",
+    "function_signature": "def isValid(s: str) -> bool:",
+    "example": "Input: s = \"()[]{}\"\nOutput: True"
+}

@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "Add Binary",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "humain",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: a = 1010, b = 1011\nExpected Output: 10101 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpkpjwxlnf.json'\", 'parameters': ['1010', '1011'], 'function_code': \"def add_binary(a: str, b: str) -> str:\\n    if not a:\\n        return b\\n    if not b:\\n        return a\\n    if a[-1] == '1' and b[-1] == '1':\\n        return add_binary(add_binary(a[:-1], b[:-1]), '1') + '0'\\n    elif a[-1] == '0' and b[-1] == '0':\\n        return add_binary(a[:-1], b[:-1]) + '0'\\n    else:\\n        return add_binary(a[:-1], b[:-1]) + '1'\\n\"}",
+        "Test failed: Input: a = 11, b = 1\nExpected Output: 100 Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpmmcak0vm.json'\", 'parameters': ['11', '1'], 'function_code': \"def add_binary(a: str, b: str) -> str:\\n    if not a:\\n        return b\\n    if not b:\\n        return a\\n    if a[-1] == '1' and b[-1] == '1':\\n        return add_binary(add_binary(a[:-1], b[:-1]), '1') + '0'\\n    elif a[-1] == '0' and b[-1] == '0':\\n        return add_binary(a[:-1], b[:-1]) + '0'\\n    else:\\n        return add_binary(a[:-1], b[:-1]) + '1'\\n\"}"
+    ]
+}

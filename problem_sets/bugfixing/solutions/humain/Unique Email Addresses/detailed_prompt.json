@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "Unique Email Addresses",
+    "model_identifier": "humain",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def num_unique_emails(emails: List[str]) -> int:\n    def process_email(email: str) -> str:\n        local, domain = email.split('@')\n        local = local.split('+')[0].replace('.', '')\n        return local + '@' + domain\n    return len(set(map(process_email, emails)))\n",
+    "feedback": null
+}

@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "Generate Parentheses",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "humain",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: n = 3\nExpected Output: ((())), (()()), (())(), ()(()), ()()() Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpi2y3zcxc.json'\", 'parameters': [3], 'function_code': \"def generateParenthesis(n: int) -> List[str]:\\n    def generate(p, left, right, parens=[]):\\n        if right >= left >= 0:\\n            if not right: parens += p,\\n            generate(p + '(', left - 1, right)\\n            generate(p + ')', left, right - 1)\\n        return parens\\n    return generate('', n, n)\\n\"}",
+        "Test failed: Input: n = 1\nExpected Output: () Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpiycudzok.json'\", 'parameters': [1], 'function_code': \"def generateParenthesis(n: int) -> List[str]:\\n    def generate(p, left, right, parens=[]):\\n        if right >= left >= 0:\\n            if not right: parens += p,\\n            generate(p + '(', left - 1, right)\\n            generate(p + ')', left, right - 1)\\n        return parens\\n    return generate('', n, n)\\n\"}"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "Reverse Words in a String III",
+    "model_identifier": "humain",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def reverse_words(s: str) -> str:\n    def reverse_word(word: str) -> str:\n        if not word:\n            return word\n        return word[-1] + reverse_word(word[:-1])\n    return ' '.join(map(reverse_word, s.split()))\n\u0018\n",
+    "feedback": null
+}

@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "Valid Parentheses",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "humain",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: s = ()[]\nExpected Output: True Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmpbv4ai1hm.json'\", 'parameters': ['()[]'], 'function_code': \"def isValid(s: str) -> bool:\\n    def helper(stack, remaining):\\n        if not remaining: return not stack\\n        if remaining[0] in '({[':\\n            return helper(stack + [remaining[0]], remaining[1:])\\n        if not stack: return False\\n        if remaining[0] == ')' and stack[-1] == '(': return helper(stack[:-1], remaining[1:])\\n        if remaining[0] == '}' and stack[-1] == '{': return helper(stack[:-1], remaining[1:])\\n        if remaining[0] == ']' and stack[-1] == '[': return helper(stack[:-1], remaining[1:])\\n        return False\\n    return helper([], s)\\n\"}",
+        "Test failed: Input: s = ([)]\nExpected Output: False Result: {'exception': \"[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\tmptgpc4x18.json'\", 'parameters': ['([)]'], 'function_code': \"def isValid(s: str) -> bool:\\n    def helper(stack, remaining):\\n        if not remaining: return not stack\\n        if remaining[0] in '({[':\\n            return helper(stack + [remaining[0]], remaining[1:])\\n        if not stack: return False\\n        if remaining[0] == ')' and stack[-1] == '(': return helper(stack[:-1], remaining[1:])\\n        if remaining[0] == '}' and stack[-1] == '{': return helper(stack[:-1], remaining[1:])\\n        if remaining[0] == ']' and stack[-1] == '[': return helper(stack[:-1], remaining[1:])\\n        return False\\n    return helper([], s)\\n\"}"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "Add Binary",
+    "model_identifier": "humain",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def add_binary(a: str, b: str) -> str:\n    if not a:\n        return b\n    if not b:\n        return a\n    if a[-1] == '1' and b[-1] == '1':\n        return add_binary(add_binary(a[:-1], b[:-1]), '1') + '0'\n    elif a[-1] == '0' and b[-1] == '0':\n        return add_binary(a[:-1], b[:-1]) + '0'\n    else:\n        return add_binary(a[:-1], b[:-1]) + '1'\n",
+    "feedback": null
+}
