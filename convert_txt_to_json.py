@@ -1,110 +1,136 @@
-import argparse
+
 import json
 import os
+import argparse
 
-def parse_problem(problem_str):
-    problem_dict = {
-        "function_prototype": {
-            "parameters": [],
-            "return_values": []
+TEMPLATE_JSON = {
+    "identifier": "Valid Parentheses",
+    "description": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if: Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order.",
+    "function_prototype": {
+        "function_name": "isValid",
+        "parameters": [
+            {
+                "name": "s",
+                "type": "str"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "bool"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "s": "()[]"
+            },
+            "expected_output": [
+                True
+            ]
         },
-        "correctness_test_suite": [],
-        "prompts": [],
-    }
-    
-    lines = [line.strip() for line in problem_str.split('\n') if line.strip()]
-    for line in lines:
-        if ':' not in line:
-            print(f"Skipping line '{line}' as it does not contain a colon.")
-            continue
-        
-        key, value = line.split(':', 1)
-        key = key.strip()
-        value = value.strip()
+        {
+            "input": {
+                "s": "([)]"
+            },
+            "expected_output": [
+                False
+            ]
+        }
+    ],
+    "tags": [
+        "String",
+        "Stack",
+        "Easy"
+    ],
+    "prompts": [
+        {
+            "prompt_id": "brief_prompt",
+            "prompt": "Implement the isValid function to determine if the input string s has valid parentheses.",
+            "genericize": False,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "()[]"
+                    },
+                    "expected_output": [
+                        True
+                    ]
+                },
+                {
+                    "input": {
+                        "s": "(]"
+                    },
+                    "expected_output": [
+                        False
+                    ]
+                }
+            ]
+        },
+        {
+            "prompt_id": "detailed_prompt",
+            "prompt": "Write a function named 'isValid' that takes a string s containing just the characters '(', ')', '{', '}', '[' and ']', and returns a boolean representing whether the input string has valid parentheses.",
+            "genericize": True,
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "()"
+                    },
+                    "expected_output": [
+                        True
+                    ]
+                },
+                {
+                    "input": {
+                        "s": "([)]"
+                    },
+                    "expected_output": [
+                        False
+                    ]
+                }
+            ]
+        }
+    ],
+    "title": "Valid Parentheses",
+    "function_signature": "def isValid(s: str) -> bool:",
+    "example": "Input: s = \"()[]{}\"\nOutput: True"
+}
 
-        if key == 'Title':
-            problem_dict['identifier'] = value
-            problem_dict['title'] = value
-        elif key == 'Description':
-            problem_dict['description'] = value
-        elif key == 'Function Prototype':
-            try:
-                func_name, params_return = value.split('(', 1)
-                params, return_type = params_return.split(') -> ', 1)
-            except ValueError as e:
-                print(f"Error parsing Function Prototype on line '{line}': {e}")
-                continue
+def convert_txt_to_json(base_path: str, mode: str):
+    # Use the hard-coded template JSON
+    template_json = TEMPLATE_JSON
 
-            problem_dict['function_prototype']['function_name'] = func_name.strip()
-            problem_dict['function_prototype']['parameters'] = [{'name': p.split(':')[0].strip(), 'type': p.split(':')[1].strip()} for p in params.split(', ') if p]
-            problem_dict['function_prototype']['return_values'].append({'type': return_type.strip()})
-        elif key == 'Tags':
-            problem_dict['tags'] = [tag.strip() for tag in value.strip('[]').split(',')]
-        elif key == 'Prompt':
-            problem_dict['prompts'].append({
-                "prompt_id": "brief_prompt",
-                "prompt": value,
-                "genericize": False,
-                "sample_inputs_outputs": []
-            })
-
-    # Before creating the function signature, check if the necessary keys are present
-    if 'function_name' not in problem_dict['function_prototype'] or \
-       not problem_dict['function_prototype']['parameters'] or \
-       not problem_dict['function_prototype']['return_values']:
-        print(f"Error: Missing necessary keys in problem_dict for problem {problem_dict.get('title', 'Unknown')}")
-        return None
-
-    problem_dict["function_signature"] = f"def {problem_dict['function_prototype']['function_name']}({', '.join([p['name'] for p in problem_dict['function_prototype']['parameters']])}) -> {problem_dict['function_prototype']['return_values'][0]['type']}:"
-    return problem_dict
-
-
-def convert_txt_to_json(base_path, mode):
+    # Define the txt file path based on the mode
     txt_file_path = os.path.join(base_path, f"{mode}.txt")
     if not os.path.exists(txt_file_path):
         raise FileNotFoundError(f"The txt file {txt_file_path} does not exist.")
 
-    json_directory = os.path.join('problem_sets', mode, 'problems')
-    os.makedirs(json_directory, exist_ok=True)
+    # Define the JSON output directory based on the mode
+    json_output_dir = os.path.join(base_path, 'problem_sets', mode, 'problems')
+    os.makedirs(json_output_dir, exist_ok=True)
 
-    with open(txt_file_path, 'r') as file:
-        content = file.read()
+    # Read the txt file
+    with open(txt_file_path, 'r') as txt_file:
+        titles = [title.strip() for title in txt_file.readlines() if title.strip()]
 
-    problems_str = content.split('---')
-    converted_count = 0
-    for problem_str in problems_str:
-        problem_str = problem_str.strip()
-        if not problem_str:
-            continue
+    for title in titles:
+        # Use the template JSON and update the title
+        json_obj = template_json.copy()
+        json_obj['title'] = title
+        json_obj['identifier'] = title
 
-        problem_dict = parse_problem(problem_str)
-        
-        # If problem_dict is None, skip this problem
-        if problem_dict is None:
-            print("Skipping current problem due to errors in parsing.")
-            continue
-        
-        # If problem_dict does not have the key 'identifier', skip this problem
-        if 'identifier' not in problem_dict:
-            print(f"Skipping problem due to missing 'identifier': {problem_str[:60]}...")
-            continue
-        
-        json_file_path = os.path.join(json_directory, f"{problem_dict['identifier']}.json")
+        # Define the JSON file path based on the title
+        formatted_title = title.replace(" ", "_")
+        json_file_path = os.path.join(json_output_dir, f"{formatted_title}.json")
         with open(json_file_path, 'w') as json_file:
-            json.dump(problem_dict, json_file, indent=4)
-        
-        converted_count += 1  # Increment the count of successfully converted problems
-
-    print(f"Converted {converted_count} problems from {txt_file_path} to JSON files in {json_directory}.")
+            json.dump(json_obj, json_file, indent=4)
 
 def main():
     parser = argparse.ArgumentParser(description='Convert txt to JSON.')
-    parser.add_argument('--base_path', type=str, required=True, help='The base path of the txt file.')
-    parser.add_argument('--mode', type=str, required=True, choices=['basic', 'bugfixing'], help='The mode to use for conversion.')
+    parser.add_argument('--base_path', required=True, help='The base path of the txt file.')
+    parser.add_argument('--mode', required=True, help='The mode, e.g., basic or bugfixing.')
     args = parser.parse_args()
-
     convert_txt_to_json(args.base_path, args.mode)
-
 
 if __name__ == "__main__":
     main()
